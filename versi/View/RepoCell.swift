@@ -10,15 +10,30 @@ import UIKit
 
 class RepoCell: UITableViewCell {
 
+    @IBOutlet weak var repoNameLbl: UILabel!
+    @IBOutlet weak var repoDescLbl: UILabel!
+    @IBOutlet weak var repoImage: UIImageView!
+    @IBOutlet weak var numberOfForksLbl: UILabel!
+    @IBOutlet weak var viewReadMeBtn: UIButton!
+    
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var constributorsLbl: UILabel!
+    @IBOutlet weak var languageLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    private var repoUrl: String?
+    
+    func configureCell(repo: Repo){
+        
+        self.repoNameLbl.text = repo.repoName
+        self.repoDescLbl.text = repo.repoDesc
+        self.repoImage.image = repo.repoImage
+        self.numberOfForksLbl.text = String(describing: repo.numberofForks)
+        self.constributorsLbl.text = String(describing: repo.constributors)
+        self.languageLbl.text = repo.language
+        self.repoUrl = repo.repoUrl
     }
-
 }
