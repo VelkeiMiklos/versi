@@ -7,29 +7,40 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class TrendingFeedVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var disposeBag = DisposeBag()
+    let refreshControl = UIRefreshControl()
+    
+    var dataSource = PublishSubject<[Repo]>()//csak új itemeket tud "subscriebolni" ami előtte van azokat nem
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        // Do any additional setup after loading the view, typically from a nib
+        tableView.refreshControl = refreshControl
+        tableView.tintColor = #colorLiteral(red: 0.2807125449, green: 0.4623855948, blue: 0.9024894238, alpha: 1)
+        refreshControl.addTarget(self, action: #selector(downloadData), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Hot Github Repos ", attributes: [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0.2807125449, green: 0.4623855948, blue: 0.9024894238, alpha: 1),
+             NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Bold" , size: 16)!])
+        self.downloadData()
+        dataSource.bind(to: tableView.rx.items(cellIdentifier: "repoCell")) { (row, repo: Repo, cell: RepoCell) in
+            cell.configureCell(repo: repo)}.addDisposableTo(disposeBag)
     }
 
+    
+    @objc func downloadData(){
+        DataServices.instance.downloadTrendingDictRepository { (success, repoDictArray) in
+            if success{
+                DataServices.instance.convertDictArrayToRepo(repoDictArray: repoDictArray!, completion: { (returndRepoArray) in
+                    self.dataSource.onNext(returndRepoArray)//hozzá adja a dataSource-hoz
+                })
+            }
+        }
+        refreshControl.endRefreshing()
+    }
 }
-extension TrendingFeedVC: UITableViewDelegate, UITableViewDataSource{
-        func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
-        }
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 2
-        }
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           guard let cell = tableView.dequeueReusableCell(withIdentifier: "repoCell", for: indexPath) as? RepoCell else { return UITableViewCell() }
-        let repo = Repo(repoName: "Swift", repoDesc: "Swift Description", repoImage: #imageLiteral(resourceName: "searchIconLarge"), numberofForks: 3456, constributors: 654, language: "SWIFT", repoUrl: "www.google.hu")
-            cell.configureCell(repo: repo)
-            return cell
-        }
-}
+
+

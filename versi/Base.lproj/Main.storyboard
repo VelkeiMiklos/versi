@@ -44,7 +44,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WF-MX-YOB" customClass="CustomView" customModule="versi" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="398" height="413.66666666666669"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPO NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7m-84-ggd">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPO NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="S7m-84-ggd">
                                                             <rect key="frame" x="138.33333333333334" y="8" width="121.66666666666666" height="24"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,8 +56,8 @@
                                                                 <constraint firstAttribute="height" constant="234.5" id="vzR-zD-8nA"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPO DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vB-w6-iQW">
-                                                            <rect key="frame" x="117.66666666666669" y="33" width="163" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPO DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="9vB-w6-iQW">
+                                                            <rect key="frame" x="8" y="33" width="382" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -172,7 +172,9 @@
                                                         <constraint firstItem="5IM-Xs-hbP" firstAttribute="centerX" secondItem="4WF-MX-YOB" secondAttribute="centerX" id="cCx-Gf-VyG"/>
                                                         <constraint firstItem="5IM-Xs-hbP" firstAttribute="top" secondItem="9vB-w6-iQW" secondAttribute="bottom" constant="20" id="dJZ-hJ-xW5"/>
                                                         <constraint firstAttribute="trailing" secondItem="5IM-Xs-hbP" secondAttribute="trailing" constant="8" id="iyX-4U-94G"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9vB-w6-iQW" secondAttribute="trailing" constant="8" id="mav-Sc-g8L"/>
                                                         <constraint firstItem="5IM-Xs-hbP" firstAttribute="leading" secondItem="4WF-MX-YOB" secondAttribute="leading" constant="8" id="paS-Hg-LP7"/>
+                                                        <constraint firstItem="9vB-w6-iQW" firstAttribute="leading" secondItem="4WF-MX-YOB" secondAttribute="leading" constant="8" id="zwQ-wf-eDC"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -256,13 +258,13 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2E-Ls-l9U">
                                                     <rect key="frame" x="8" y="8" width="398" height="93.666666666666671"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPO NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zw0-Hv-UhB">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPO NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Zw0-Hv-UhB">
                                                             <rect key="frame" x="8" y="7.9999999999999982" width="296" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPO DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-6a-k0s">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPO DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Sk9-6a-k0s">
                                                             <rect key="frame" x="16" y="32.333333333333336" width="288" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
