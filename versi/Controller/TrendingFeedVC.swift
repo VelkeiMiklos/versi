@@ -23,7 +23,7 @@ class TrendingFeedVC: UIViewController {
         tableView.refreshControl = refreshControl
         tableView.tintColor = #colorLiteral(red: 0.2807125449, green: 0.4623855948, blue: 0.9024894238, alpha: 1)
         refreshControl.addTarget(self, action: #selector(downloadData), for: .valueChanged)
-        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Hot Github Repos ", attributes: [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0.2807125449, green: 0.4623855948, blue: 0.9024894238, alpha: 1),
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Hot Github Repos", attributes: [NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0.2807125449, green: 0.4623855948, blue: 0.9024894238, alpha: 1),
              NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Bold" , size: 16)!])
         self.downloadData()
         dataSource.bind(to: tableView.rx.items(cellIdentifier: "repoCell")) { (row, repo: Repo, cell: RepoCell) in

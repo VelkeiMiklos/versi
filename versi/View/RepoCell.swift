@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RepoCell: UITableViewCell {
 
@@ -24,6 +26,7 @@ class RepoCell: UITableViewCell {
         // Initialization code
     }
 
+    var disposeBag = DisposeBag()
     private var repoUrl: String?
     
     func configureCell(repo: Repo){
@@ -35,5 +38,11 @@ class RepoCell: UITableViewCell {
         self.constributorsLbl.text = String(describing: repo.constributors)
         self.languageLbl.text = repo.language
         self.repoUrl = repo.repoUrl
+        
+        viewReadMeBtn.rx.tap
+        .debounce(0.5, scheduler: MainScheduler.instance)
+        .subscribe(onNext: {
+            self.window?.rootViewController?.presentSafariVC(url: self.repoUrl!)//rootVC-hez hozzáférés
+            }).addDisposableTo(disposeBag)
     }
 }

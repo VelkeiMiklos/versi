@@ -14,6 +14,7 @@
 		F501683A1FE4172000A2EB35 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50168391FE4172000A2EB35 /* CustomTextField.swift */; };
 		F501683C1FE4173700A2EB35 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501683B1FE4173700A2EB35 /* CustomView.swift */; };
 		F501683F1FE418E600A2EB35 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501683E1FE418E600A2EB35 /* Constant.swift */; };
+		F577349E1FE5763100A68F25 /* UIViewControllerExtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577349D1FE5763100A68F25 /* UIViewControllerExtViewController.swift */; };
 		F597504F1FE2F2FA0039DAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597504E1FE2F2FA0039DAEE /* AppDelegate.swift */; };
 		F59750511FE2F2FA0039DAEE /* TrendingFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59750501FE2F2FA0039DAEE /* TrendingFeedVC.swift */; };
 		F59750541FE2F2FA0039DAEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59750521FE2F2FA0039DAEE /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		F50168391FE4172000A2EB35 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F501683B1FE4173700A2EB35 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F501683E1FE418E600A2EB35 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F577349D1FE5763100A68F25 /* UIViewControllerExtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtViewController.swift; sourceTree = "<group>"; };
 		F597504B1FE2F2FA0039DAEE /* versi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = versi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F597504E1FE2F2FA0039DAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F59750501FE2F2FA0039DAEE /* TrendingFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingFeedVC.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		F577349C1FE575EF00A68F25 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F577349D1FE5763100A68F25 /* UIViewControllerExtViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		F59750421FE2F2F90039DAEE = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		F597504D1FE2F2FA0039DAEE /* versi */ = {
 			isa = PBXGroup;
 			children = (
+				F577349C1FE575EF00A68F25 /* Extension */,
 				F501683D1FE418D900A2EB35 /* Util */,
 				F59750631FE3025A0039DAEE /* Services */,
 				F59750611FE3024F0039DAEE /* View */,
@@ -281,6 +292,7 @@
 				F50168361FE416A700A2EB35 /* Model.swift in Sources */,
 				F59750651FE302790039DAEE /* SearchVC.swift in Sources */,
 				F59750691FE305F40039DAEE /* SearchCell.swift in Sources */,
+				F577349E1FE5763100A68F25 /* UIViewControllerExtViewController.swift in Sources */,
 				F59750511FE2F2FA0039DAEE /* TrendingFeedVC.swift in Sources */,
 				F50168381FE416FE00A2EB35 /* CustomButton.swift in Sources */,
 				F501683C1FE4173700A2EB35 /* CustomView.swift in Sources */,
