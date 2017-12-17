@@ -35,7 +35,10 @@ class TrendingFeedVC: UIViewController {
         DataServices.instance.downloadTrendingDictRepository { (success, repoDictArray) in
             if success{
                 DataServices.instance.convertDictArrayToRepo(repoDictArray: repoDictArray!, completion: { (returndRepoArray) in
-                    self.dataSource.onNext(returndRepoArray)//hozzá adja a dataSource-hoz
+                    
+                    let sortedRepo =  returndRepoArray.sorted(by: {$0.numberofForks > $1.numberofForks })
+                    
+                    self.dataSource.onNext(sortedRepo)//hozzá adja a dataSource-hoz
                 })
             }
         }
