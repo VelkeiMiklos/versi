@@ -385,6 +385,10 @@
                     <tabBarItem key="tabBarItem" title="SEARCH" image="searchIconSmall" selectedImage="searchIconSmall" id="M7o-Nf-jEp">
                         <color key="badgeColor" red="0.28071254490000003" green="0.46238559480000002" blue="0.90248942379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="searchText" destination="saM-VQ-TTF" id="Sfx-mR-qTj"/>
+                        <outlet property="tableView" destination="rVd-rQ-hCD" id="mY9-E1-qUR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tuo-kf-f0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
